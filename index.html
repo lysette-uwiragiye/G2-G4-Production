@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Visual SOP - G2 to G4 Seed Field Production (21 Steps)</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            background-color: #0b132b;
+            color: #f8fafc;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            padding: 24px;
+        }
+
+        .container {
+            background-color: #1c2541;
+            border: 2px solid #3a506b;
+            border-radius: 12px;
+            padding: 28px;
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6);
+            max-width: 1750px;
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        .header {
+            margin-bottom: 24px;
+            text-align: center;
+            border-bottom: 2px solid #3a506b;
+            padding-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            color: #38bdf8;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .header p {
+            font-size: 1rem;
+            color: #94a3b8;
+            margin-top: 6px;
+            font-weight: 500;
+        }
+
+        .summary-bar {
+            display: flex;
+            justify-content: space-around;
+            background-color: #0b132b;
+            border: 1px solid #3a506b;
+            border-radius: 8px;
+            padding: 14px;
+            margin-bottom: 24px;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .stat-box {
+            text-align: center;
+        }
+
+        .stat-box .title {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #94a3b8;
+            font-weight: 700;
+        }
+
+        .stat-box .value {
+            font-size: 1.2rem;
+            font-weight: 800;
+            margin-top: 4px;
+        }
+
+        .va-color { color: #4ade80; }
+        .bva-color { color: #fbbf24; }
+        .nva-color { color: #f87171; }
+
+        .sop-svg {
+            width: 100%;
+            min-width: 1650px;
+            height: auto;
+        }
+
+        .step-card {
+            transition: transform 0.2s ease, filter 0.2s ease;
+            cursor: pointer;
+        }
+
+        .step-card:hover {
+            transform: translateY(-4px);
+            filter: drop-shadow(0px 8px 16px rgba(56, 189, 248, 0.3));
+        }
+
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+            margin-top: 24px;
+            padding-top: 16px;
+            border-top: 1px solid #3a506b;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #cbd5e1;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .legend-badge {
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 800;
+        }
+
+        .badge-va { background-color: #14532d; color: #4ade80; border: 1px solid #22c55e; }
+        .badge-bva { background-color: #78350f; color: #fbbf24; border: 1px solid #f59e0b; }
+        .badge-nva { background-color: #7f1d1d; color: #f87171; border: 1px solid #ef4444; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>Visual SOP: G2 to G4 Seed Field Production (Full 21 Steps)</h1>
+            <p>Process Owner: <strong style="color: #f8fafc;">Potato Seed Field Production Specialist</strong> &bull; Goal: Propagate, grow, and bulk disease-free seeds to meet internal & national quality standards</p>
+        </div>
+
+        <div class="summary-bar">
+            <div class="stat-box">
+                <div class="title">Total Process Steps</div>
+                <div class="value" style="color: #38bdf8;">21 Activities</div>
+            </div>
+            <div class="stat-box">
+                <div class="title">Value-Added (VA)</div>
+                <div class="value va-color">2 Steps (Seed Planting & Dehaulming)</div>
+            </div>
+            <div class="stat-box">
+                <div class="title">Business Value-Added (BVA)</div>
+                <div class="value bva-color">19 Steps (Land Prep, Nutrition, Crop Care, Scouting)</div>
+            </div>
+            <div class="stat-box">
+                <div class="title">Process Waste (NVA Delays)</div>
+                <div class="value nva-color">Labor Shortages & Input Delays</div>
+            </div>
+        </div>
+
+        <svg class="sop-svg" viewBox="0 0 1650 1780" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                    <path d="M 0 0 L 10 5 L 0 10 z" fill="#38bdf8"/>
+                </marker>
+            </defs>
+
+            <!-- PROCESS LANE BACKGROUND -->
+            <rect x="20" y="20" width="1610" height="1700" rx="10" fill="#0b132b" stroke="#3a506b" stroke-width="2"/>
+            <rect x="20" y="20" width="45" height="1700" rx="10" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2"/>
+            <text x="47" y="870" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle" transform="rotate(-90 47 870)">G2 - G4 SEED FIELD PRODUCTION WORKFLOW</text>
+
+            <!-- START EVENT -->
+            <circle cx="100" cy="150" r="20" fill="#15803d" stroke="#4ade80" stroke-width="3"/>
+            <text x="100" y="155" font-size="10" font-weight="800" fill="#ffffff" text-anchor="middle">START</text>
+            <path d="M 120 150 L 145 150" stroke="#38bdf8" stroke-width="3" marker-end="url(#arrow)"/>
+
+            <!-- ROW 1: STEPS 1 - 4 -->
+            <!-- STEP 1 -->
+            <g class="step-card">
+                <rect x="150" y="30" width="260" height="240" rx="8" fill="#1c2541" stroke="#f59e0b" stroke-width="2.5"/>
+                <rect x="150" y="30" width="260" height="30" rx="6" fill="#78350f"/>
+                <text x="160" y="50" font-size="10.5" font-weight="800" fill="#fbbf24">1.0 Land Clearing</text>
+                <rect x="360" y="35" width="42" height="20" rx="4" fill="#f59e0b"/>
+                <text x="381" y="49" font-size="9" font-weight="800" fill="#451a03" text-anchor="middle">BVA</text>
+                <text x="160" y="78" font-size="9" font-weight="700" fill="#94a3b8">Owner: <tspan fill="#f8fafc">Outgrower & OAF Agronomist</tspan></text>
+                <text x="160" y="93" font-size="9" font-weight="700" fill="#38bdf8">Lead Time: <tspan fill="#cbd5e1">5-8 hrs / Ha (30 casuals)</tspan></text>
+                <text x="160" y="112" font-size="8.5" fill="#cbd5e1">Tools: Machete, Axe, GPS, Notebook.</text>
+                <text x="160" y="125" font-size="8.5" fill="#cbd5e1">Desc: Remove bushes to ensure unhindered plowing.</text>
+                <rect x="158" y="135" width="244" height="60" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+                <text x="164" y="149" font-size="8.5" font-weight="800" fill="#6ee7b7">CHALLENGES:</text>
+                <text x="164" y="162" font-size="8" fill="#a7f3d0">&bull; None (Standard prep work)</text>
+                <rect x="158" y="200" width="244" height="32" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+                <text x="164" y="213" font-size="8.5" font-weight="800" fill="#6ee7b7">PROPOSED IMPROVEMENT:</text>
+                <text x="164" y="225" font-size="8" font-weight="700" fill="#a7f3d0">Standardized Pre-Clearance Field Check</text>
+            </g>
+            <path d="M 410 150 L 435 150" stroke="#38bdf8" stroke-width="3" marker-end="url(#arrow)"/>
+
+            <!-- STEP 2 -->
+            <g class="step-card">
+                <rect x="440" y="30" width="260" height="240" rx="8" fill="#1c2541" stroke="#f59e0b" stroke-width="2.5"/>
+                <rect x="440" y="30" width="260" height="30" rx="6" fill="#78350f"/>
+                <text x="450" y="50" font-size="10.5" font-weight="800" fill="#fbbf24">2.0 First Tillage / Plowing</text>
+                <rect x="650" y="35" width="42" height="20" rx="4" fill="#f59e0b"/>
+                <text x="671" y="49" font-size="9" font-weight="800" fill="#451a03" text-anchor="middle">BVA</text>
+                <text x="450" y="78" font-size="9" font-weight="700" fill="#94a3b8">Owner: <tspan fill="#f8fafc">Outgrower & OAF Agronomist</tspan></text>
+                <text x="450" y="93" font-size="9" font-weight="700" fill="#38bdf8">Lead Time: <tspan fill="#cbd5e1">3 hrs (Mech) | 5-8 hrs (Manual)</tspan></text>
+                <text x="450" y="112" font-size="8.5" fill="#cbd5e1">Tools: Tractor, Disc Plow/Ripper, Hoes.</text>
+                <text x="450" y="125" font-size="8.5" fill="#cbd5e1">Desc: Break down soil up to 30-40 cm hardpans.</text>
+                <rect x="448" y="135" width="244" height="60" rx="4" fill="#450a0a" stroke="#ef4444" stroke-width="1"/>
+                <text x="454" y="149" font-size="8.5" font-weight="800" fill="#fca5a5">CHALLENGES & RISKS:</text>
+                <text x="454" y="162" font-size="8" fill="#fecdd3">&bull; Casual labor availability delays</text>
+                <rect x="448" y="200" width="244" height="32" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+                <text x="454" y="213" font-size="8.5" font-weight="800" fill="#6ee7b7">PROPOSED IMPROVEMENT:</text>
+                <text x="454" y="225" font-size="8" font-weight="700" fill="#a7f3d0">Enforce Mechanisation Where Possible</text>
+            </g>
+            <path d="M 700 150 L 725 150" stroke="#38bdf8" stroke-width="3" marker-end="url(#arrow)"/>
+
+            <!-- STEP 3 -->
+            <g class="step-card">
+                <rect x="730" y="30" width="260" height="240" rx="8" fill="#1c2541" stroke="#f59e0b" stroke-width="2.5"/>
+                <rect x="730" y="30" width="260" height="30" rx="6" fill="#78350f"/>
+                <text x="740" y="50" font-size="10.5" font-weight="800" fill="#fbbf24">3.0 Second Tillage / Harrowing</text>
+                <rect x="940" y="35" width="42" height="20" rx="4" fill="#f59e0b"/>
+                <text x="961" y="49" font-size="9" font-weight="800" fill="#451a03" text-anchor="middle">BVA</text>
+                <text x="740" y="78" font-size="9" font-weight="700" fill="#94a3b8">Owner: <tspan fill="#f8fafc">Outgrower & OAF Agronomist</tspan></text>
+                <text x="740" y="93" font-size="9" font-weight="700" fill="#38bdf8">Lead Time: <tspan fill="#cbd5e1">2 hrs (Mech) | 5-8 hrs (Manual)</tspan></text>
+                <text x="740" y="112" font-size="8.5" fill="#cbd5e1">Tools: Disc Harrow, Hand Hoes, GPS.</text>
+                <text x="740" y="125" font-size="8.5" fill="#cbd5e1">Desc: Loosen soil into fine soil particles.</text>
+                <rect x="738" y="135" width="244" height="60" rx="4" fill="#450a0a" stroke="#ef4444" stroke-width="1"/>
+                <text x="744" y="149" font-size="8.5" font-weight="800" fill="#fca5a5">CHALLENGES & RISKS:</text>
+                <text x="744" y="162" font-size="8" fill="#fecdd3">&bull; Casual labor availability delays</text>
+                <rect x="738" y="200" width="244" height="32" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+                <text x="744" y="213" font-size="8.5" font-weight="800" fill="#6ee7b7">PROPOSED IMPROVEMENT:</text>
+                <text x="744" y="225" font-size="8" font-weight="700" fill="#a7f3d0">Enforce Mechanisation Where Possible</text>
+            </g>
+            <path d="M 990 150 L 1015 150" stroke="#38bdf8" stroke-width="3" marker-end="url(#arrow)"/>
+
+            <!-- STEP 4 -->
+            <g class="step-card">
+                <rect x="1020" y="30" width="260" height="240" rx="8" fill="#1c2541" stroke="#f59e0b" stroke-width="2.5"/>
+                <rect x="1020" y="30" width="260" height="30" rx="6" fill="#78350f"/>
+                <text x="1030" y="50" font-size="10.5" font-weight="800" fill="#fbbf24">4.0 Land Cleaning</text>
+                <rect x="1230" y="35" width="42" height="20" rx="4" fill="#f59e0b"/>
+                <text x="1251" y="49" font-size="9" font-weight="800" fill="#451a03" text-anchor="middle">BVA</text>
+                <text x="1030" y="78" font-size="9" font-weight="700" fill="#94a3b8">Owner: <tspan fill="#f8fafc">Outgrower & OAF Agronomist</tspan></text>
+                <text x="1030" y="93" font-size="9" font-weight="700" fill="#38bdf8">Lead Time: <tspan fill="#cbd5e1">5-8 hrs / Ha (12 casuals)</tspan></text>
+                <text x="1030" y="112" font-size="8.5" fill="#cbd5e1">Tools: Machetes, GPS, Notebook.</text>
+                <text x="1030" y="125" font-size="8.5" fill="#cbd5e1">Desc: Remove plant debris exposed during tillage.</text>
+                <rect x="1028" y="135" width="244" height="60" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+                <text x="1034" y="149" font-size="8.5" font-weight="800" fill="#6ee7b7">CHALLENGES:</text>
+                <text x="1034" y="162" font-size="8" fill="#a7f3d0">&bull; None (Standard debris clearing)</text>
+                <rect x="1028" y="200" width="244" height="32" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+                <text x="1034" y="213" font-size="8.5" font-weight="800" fill="#6ee7b7">PROPOSED IMPROVEMENT:</text>
+                <text x="1034" y="225" font-size="8" font-weight="700" fill="#a7f3d0">Standard Debris Removal Routine</text>
+            </g>
+
+            <path d="M 1150 270 L 1150 320 L 150 320 L 150 345" stroke="#38bdf8" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+
+            <!-- ROW 2: STEPS 5 - 8 -->
+            <!-- STEP 5 -->
+            <g class="step-card">
+                <rect x="150" y="350" width="260" height="240" rx="8" fill="#1c2541" stroke="#f59e0b" stroke-width="2.5"/>
+                <rect x="150" y="350" width="260" height="30" rx="6" fill="#78350f"/>
+                <text x="160" y="370" font-size="10.5" font-weight="800" fill="#fbbf24">5.0 Holes Digging / Furrowing</text>
+                <rect x="360" y="355" width="42" height="20" rx="4" fill="#f59e0b"/>
+                <text x="381" y="369" font-size="9" font-weight="800" fill="#451a03" text-anchor="middle">BVA</text>
+                <text x="160" y="398" font-size="9" font-weight="700" fill="#94a3b8">Owner: <tspan fill="#f8fafc">Outgrower & OAF Agronomist</tspan></text>
+                <text x="160" y="413" font-size="9" font-weight="700" fill="#38bdf8">Lead Time: <tspan fill="#cbd5e1">5-8 hrs / Ha (50-70 casuals)</tspan></text>
+                <text x="160" y="432" font-size="8.5" fill="#cbd5e1">Tools: Rope/Line maker, Hand Hoe, Tractor.</text>
+                <text x="160" y="445" font-size="8.5" fill="#cbd5e1">Desc: Dig 10cm holes/furrows with inter-row lines.</text>
+                <rect x="158" y="455" width="244" height="60" rx="4" fill="#450a0a" stroke="#ef4444" stroke-width="1"/>
+                <text x="164" y="469" font-size="8.5" font-weight="800" fill="#fca5a5">CHALLENGES & RISKS:</text>
+                <text x="164" y="482" font-size="8" fill="#fecdd3">&bull; Accuracy in spacing</text>
+                <rect x="158" y="520" width="244" height="32" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+                <text x="164" y="533" font-size="8.5" font-weight="800" fill="#6ee7b7">PROPOSED IMPROVEMENT:</text>
+                <text x="164" y="545" font-size="8" font-weight="700" fill="#a7f3d0">Keep Training Workers on Row Spacing</text>
+            </g>
+            <path d="M 410 470 L 435 470" stroke="#38bdf8" stroke-width="3" marker-end="url(#arrow)"/>
+
+            <!-- STEP 6 -->
+            <g class="step-card">
+                <rect x="440" y="350" width="260" height="240" rx="8" fill="#1c2541" stroke="#f59e0b" stroke-width="2.5"/>
+                <rect x="440" y="350" width="260" height="30" rx="6" fill="#78350f"/>
+                <text x="450" y="370" font-size="10.5" font-weight="800" fill="#fbbf24">6.0 Seed Delivery Request</text>
+                <rect x="650" y="355" width="42" height="20" rx="4" fill="#f59e0b"/>
+                <text x="671" y="369" font-size="9" font-weight="800" fill="#451a03" text-anchor="middle">BVA</text>
+                <text x="450" y="398" font-size="9" font-weight="700" fill="#94a3b8">Owner: <tspan fill="#f8fafc">OAF Field Agronomist</tspan></text>
+                <text x="450" y="413" font-size="9" font-weight="700" fill="#38bdf8">Lead Time: <tspan fill="#cbd5e1">30 Minutes</tspan></text>
+                <text x="450" y="432" font-size="8.5" fill="#cbd5e1">Tools: GPS, AppSheet, Notebook.</text>
+                <text x="450" y="445" font-size="8.5" fill="#cbd5e1">Desc: Request seed estimated for prepared land.</text>
+                <rect x="448" y="455" width="244" height="60" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+                <text x="454" y="469" font-size="8.5" font-weight="800" fill="#6ee7b7">CHALLENGES:</text>
+                <text x="454" y="482" font-size="8" fill="#a7f3d0">&bull; None (Digital request dispatch)</text>
+                <rect x="448" y="520" width="244" height="32" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+                <text x="454" y="533" font-size="8.5" font-weight="800" fill="#6ee7b7">PROPOSED IMPROVEMENT:</text>
+                <text x="454" y="545" font-size="8" font-weight="700" fill="#a7f3d0">AppSheet Automated Request Logging</text>
+            </g>
+            <path d="M 700 470 L 725 470" stroke="#38bdf8" stroke-width="3" marker-end="url(#arrow)"/>
+
+            <!-- STEP 7 -->
+            <g class="step-card">
+                <rect x="730" y="350" width="260" height="240" rx="8" fill="#1c2541" stroke="#f59e0b" stroke-width="2.5"/>
+                <rect x="730" y="350" width="260" height="30" rx="6" fill="#78350f"/>
+                <text x="740" y="370" font-size="10.5" font-weight="800" fill="#fbbf24">7.0 Seed Delivery</text>
+                <rect x="940" y="355" width="42" height="20" rx="4" fill="#f59e0b"/>
+                <text x="961" y="369" font-size="9" font-weight="800" fill="#451a03" text-anchor="middle">BVA</text>
+                <text x="740" y="398" font-size="9" font-weight="700" fill="#94a3b8">Owner: <tspan fill="#f8fafc">Store Manager & Transporter (LOG)</tspan></text>
+                <text x="740" y="413" font-size="9" font-weight="700" fill="#38bdf8">Lead Time: <tspan fill="#cbd5e1">~12 Hours (Distance dependent)</tspan></text>
+                <text x="740" y="432" font-size="8.5" fill="#cbd5e1">Tools: Truck, Delivery Note, AppSheet.</text>
+                <text x="740" y="445" font-size="8.5" fill="#cbd5e1">Desc: Transport seed from warehouse to field.</text>
+                <rect x="738" y="455" width="244" height="60" rx="4" fill="#450a0a" stroke="#ef4444" stroke-width="1"/>
+                <text x="744" y="469" font-size="8.5" font-weight="800" fill="#fca5a5">CHALLENGES & RISKS:</text>
+                <text x="744" y="482" font-size="8" fill="#fecdd3">&bull; Delay in transport</text>
+                <text x="744" y="493" font-size="8" fill="#fecdd3">&bull; Delivery of seed exceeding area prepared</text>
+                <rect x="738" y="520" width="244" height="32" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+                <text x="744" y="533" font-size="8.5" font-weight="800" fill="#6ee7b7">PROPOSED IMPROVEMENT:</text>
+                <text x="744" y="545" font-size="8" font-weight="700" fill="#a7f3d0">Pre-Dispatch Land Validation SOP</text>
+            </g>
+            <path d="M 990 470 L 1015 470" stroke="#38bdf8" stroke-width="3" marker-end="url(#arrow)"/>
+
+            <!-- STEP 8 -->
+            <g class="step-card">
+                <rect x="1020" y="350" width="260" height="240" rx="8" fill="#1c2541" stroke="#f59e0b" stroke-width="2.5"/>
+                <rect x="1020" y="350" width="260" height="30" rx="6" fill="#78350f"/>
+                <text x="1030" y="370" font-size="10.5" font-weight="800" fill="#fbbf24">8.0 Compost/Manure Application</text>
+                <rect x="1230" y="355" width="42" height="20" rx="4" fill="#f59e0b"/>
+                <text x="1251" y="369" font-size="9" font-weight="800" fill="#451a03" text-anchor="middle">BVA</text>
+                <text x="1030" y="398" font-size="9" font-weight="700" fill="#94a3b8">Owner: <tspan fill="#f8fafc">Outgrower & OAF Agronomist</tspan></text>
+                <text x="1030" y="413" font-size="9" font-weight="700" fill="#38bdf8">Lead Time: <tspan fill="#cbd5e1">5-8 hrs / Ha (30 casuals)</tspan></text>
+                <text x="1030" y="432" font-size="8.5" fill="#cbd5e1">Tools: Sacs, GPS, Notebook.</text>
+                <text x="1030" y="445" font-size="8.5" fill="#cbd5e1">Desc: Place manure in holes/furrow made.</text>
+                <rect x="1028" y="455" width="244" height="60" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+                <text x="1034" y="469" font-size="8.5" font-weight="800" fill="#6ee7b7">CHALLENGES:</text>
+                <text x="1034" y="482" font-size="8" fill="#a7f3d0">&bull; None (Basal manure placement)</text>
+                <rect x="1028" y="520" width="244" height="32" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+                <text x="1034" y="533" font-size="8.5" font-weight="800" fill="#6ee7b7">PROPOSED IMPROVEMENT:</text>
+                <text x="1034" y="545" font-size="8" font-weight="700" fill="#a7f3d0">Standardized Manure Dosing Standard</text>
+            </g>
+
+            <path d="M 1150 590 L 1150 640 L 150 640 L 150 665" stroke="#38bdf8" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+
+            <!-- ROW 3: STEPS 9 - 12 -->
+            <!-- STEP 9 -->
+            <g class="step-card">
+                <rect x="150" y="670" width="260" height="240" rx="8" fill="#1c2541" stroke="#22c55e" stroke-width="2.5"/>
+                <rect x="150" y="670" width="260" height="30" rx="6" fill="#14532d"/>
+                <text x="160" y="690" font-size="10.5" font-weight="800" fill="#4ade80">9.0 Seed Planting</text>
+                <rect x="360" y="675" width="42" height="20" rx="4" fill="#22c55e"/>
+                <text x="381" y="689" font-size="9" font-weight="800" fill="#052e16" text-anchor="middle">VA</text>
+                <text x="160" y="718" font-size="9" font-weight="700" fill="#94a3b8">Owner: <tspan fill="#f8fafc">Outgrower & OAF Agronomist</tspan></text>
+                <text x="160" y="733" font-size="9" font-weight="700" fill="#38bdf8">Lead Time: <tspan fill="#cbd5e1">5-8 hrs / Ha (30-40 casuals)</tspan></text>
+                <text x="160" y="752" font-size="8.5" fill="#cbd5e1">Tools: Sacs, GPS, Notebook.</text>
+                <text x="160" y="765" font-size="8.5" fill="#cbd5e1">Desc: Place seed potato into hole/furrow.</text>
+                <rect x="158" y="775" width="244" height="60" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+                <text x="164" y="789" font-size="8.5" font-weight="800" fill="#6ee7b7">CHALLENGES:</text>
+                <text x="164" y="802" font-size="8" fill="#a7f3d0">&bull; None (Manual seed placement)</text>
+                <rect x="158" y="840" width="244" height="32" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+                <text x="164" y="853" font-size="8.5" font-weight="800" fill="#6ee7b7">PROPOSED IMPROVEMENT:</text>
+                <text x="164" y="865" font-size="8" font-weight="700" fill="#a7f3d0">Visual Planting Spacing & Depth Guide</text>
+            </g>
+            <path d="M 410 790 L 435 790" stroke="#38bdf8" stroke-width="3" marker-end="url(#arrow)"/>
+
+            <!-- STEP 10 -->
+            <g class="step-card">
+                <rect x="440" y="670" width="260" height="240" rx="8" fill="#1c2541" stroke="#f59e0b" stroke-width="2.5"/>
+                <rect x="440" y="670" width="260" height="30" rx="6" fill="#78350f"/>
+                <text x="450" y="690" font-size="10.5" font-weight="800" fill="#fbbf24">10.0 Seed Covering</text>
+                <rect x="650" y="675" width="42" height="20" rx="4" fill="#f59e0b"/>
+                <text x="671" y="689" font-size="9" font-weight="800" fill="#451a03" text-anchor="middle">BVA</text>
+                <text x="450" y="718" font-size="9" font-weight="700" fill="#94a3b8">Owner: <tspan fill="#f8fafc">Outgrower & OAF Agronomist</tspan></text>
+                <text x="450" y="733" font-size="9" font-weight="700" fill="#38bdf8">Lead Time: <tspan fill="#cbd5e1">5-8 hrs / Ha (30 casuals)</tspan></text>
+                <text x="450" y="752" font-size="8.5" fill="#cbd5e1">Tools: Hand hoe, Notebook, AppSheet.</text>
+                <text x="450" y="765" font-size="8.5" fill="#cbd5e1">Desc: Bury seed placed in hole/furrow with soil.</text>
+                <rect x="448" y="775" width="244" height="60" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+                <text x="454" y="789" font-size="8.5" font-weight="800" fill="#6ee7b7">CHALLENGES:</text>
+                <text x="454" y="802" font-size="8" fill="#a7f3d0">&bull; None (Manual hoe covering)</text>
+                <rect x="448" y="840" width="244" height="32" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+                <text x="454" y="853" font-size="8.5" font-weight="800" fill="#6ee7b7">PROPOSED IMPROVEMENT:</text>
+                <text x="454" y="865" font-size="8" font-weight="700" fill="#a7f3d0">Ridge Height Standard Check</text>
+            </g>
+            <path d="M 700 790 L 725 790" stroke="#38bdf8" stroke-width="3" marker-end="url(#arrow)"/>
+
+            <!-- STEP 11 -->
+            <g class="step-card">
+                <rect x="730" y="670" width="260" height="240" rx="8" fill="#1c2541" stroke="#f59e0b" stroke-width="2.5"/>
+                <rect x="730" y="670" width="260" height="30" rx="6" fill="#78350f"/>
+                <text x="740" y="690" font-size="10.5" font-weight="800" fill="#fbbf24">11.0 Irrigation</text>
+                <rect x="940" y="675" width="42" height="20" rx="4" fill="#f59e0b"/>
+                <text x="961" y="689" font-size="9" font-weight="800" fill="#451a03" text-anchor="middle">BVA</text>
+                <text x="740" y="718" font-size="9" font-weight="700" fill="#94a3b8">Owner: <tspan fill="#f8fafc">Outgrower & OAF Agronomist</tspan></text>
+                <text x="740" y="733" font-size="9" font-weight="700" fill="#38bdf8">Lead Time: <tspan fill="#cbd5e1">3 hrs / Ha (16 casuals + pumps)</tspan></text>
+                <text x="740" y="752" font-size="8.5" fill="#cbd5e1">Tools: Pumps, Hose, Sprinklers, Pivot.</text>
+                <text x="740" y="765" font-size="8.5" fill="#cbd5e1">Desc: Water supply (2x/wk pre-emergence, 2 days after).</text>
+                <rect x="738" y="775" width="244" height="60" rx="4" fill="#450a0a" stroke="#ef4444" stroke-width="1"/>
+                <text x="744" y="789" font-size="8.5" font-weight="800" fill="#fca5a5">CHALLENGES & RISKS:</text>
+                <text x="744" y="802" font-size="8" fill="#fecdd3">&bull; Irrigation schedule missed (equipment/fuel cost)</text>
+                <rect x="738" y="840" width="244" height="32" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+                <text x="744" y="853" font-size="8.5" font-weight="800" fill="#6ee7b7">PROPOSED IMPROVEMENT:</text>
+                <text x="744" y="865" font-size="8" font-weight="700" fill="#a7f3d0">Shared Irrigation & Fuel Subsidy Plan</text>
+            </g>
+            <path d="M 990 790 L 1015 790" stroke="#38bdf8" stroke-width="3" marker-end="url(#arrow)"/>
+
+            <!-- STEP 12 -->
+            <g class="step-card">
+                <rect x="1020" y="670" width="260" height="240" rx="8" fill="#1c2541" stroke="#f59e0b" stroke-width="2.5"/>
+                <rect x="1020" y="670" width="260" height="30" rx="6" fill="#78350f"/>
+                <text x="1030" y="690" font-size="10.5" font-weight="800" fill="#fbbf24">12.0 Germination Check</text>
+                <rect x="1230" y="675" width="42" height="20" rx="4" fill="#f59e0b"/>
+                <text x="1251" y="689" font-size="9" font-weight="800" fill="#451a03" text-anchor="middle">BVA</text>
+                <text x="1030" y="718" font-size="9" font-weight="700" fill="#94a3b8">Owner: <tspan fill="#f8fafc">OAF Field Agronomist</tspan></text>
+                <text x="1030" y="733" font-size="9" font-weight="700" fill="#38bdf8">Lead Time: <tspan fill="#cbd5e1">1 hr / Ha</tspan></text>
+                <text x="1030" y="752" font-size="8.5" fill="#cbd5e1">Tools: Notebook, Pen, Google Sheets, AppSheet.</text>
+                <text x="1030" y="765" font-size="8.5" fill="#cbd5e1">Desc: Check percentage to which crop germinated.</text>
+                <rect x="1028" y="775" width="244" height="60" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+                <text x="1034" y="789" font-size="8.5" font-weight="800" fill="#6ee7b7">CHALLENGES:</text>
+                <text x="1034" y="802" font-size="8" fill="#a7f3d0">&bull; Emergence percentage monitoring</text>
+                <rect x="1028" y="840" width="244" height="32" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+                <text x="1034" y="853" font-size="8.5" font-weight="800" fill="#6ee7b7">PROPOSED IMPROVEMENT:</text>
+                <text x="1034" y="865" font-size="8" font-weight="700" fill="#a7f3d0">Digital Emergence Sampling Protocol</text>
+            </g>
+
+            <path d="M 1150 910 L 1150 960 L 150 960 L 150 985" stroke="#38bdf8" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+
+            <!-- ROW 4: STEPS 13 - 16 -->
+            <!-- STEP 13 -->
+            <g class="step-card">
+                <rect x="150" y="990" width="260" height="240" rx="8" fill="#1c2541" stroke="#f59e0b" stroke-width="2.5"/>
+                <rect x="150" y="990" width="260" height="30" rx="6" fill="#78350f"/>
+                <text x="160" y="1010" font-size="10.5" font-weight="800" fill="#fbbf24">13.0 Chemical Spraying</text>
+                <rect x="360" y="995" width="42" height="20" rx="4" fill="#f59e0b"/>
+                <text x="381" y="1009" font-size="9" font-weight="800" fill="#451a03" text-anchor="middle">BVA</text>
+                <text x="160" y="1038" font-size="9" font-weight="700" fill="#94a3b8">Owner: <tspan fill="#f8fafc">Outgrower & OAF Agronomist</tspan></text>
+                <text x="160" y="1053" font-size="9" font-weight="700" fill="#38bdf8">Lead Time: <tspan fill="#cbd5e1">5 hrs / Ha (15 casuals) | Every 7-14d</tspan></text>
+                <text x="160" y="1072" font-size="8.5" fill="#cbd5e1">Tools: Knapsack sprayers, Scale, PPE, Notebook.</text>
+                <text x="160" y="1085" font-size="8.5" fill="#cbd5e1">Desc: Spray chemicals to control pest and disease.</text>
+                <rect x="158" y="1095" width="244" height="60" rx="4" fill="#450a0a" stroke="#ef4444" stroke-width="1"/>
+                <text x="164" y="1109" font-size="8.5" font-weight="800" fill="#fca5a5">CHALLENGES & RISKS:</text>
+                <text x="164" y="1122" font-size="8" fill="#fecdd3">&bull; Outgrower delays supplying chemicals</text>
+                <text x="164" y="1133" font-size="8" fill="#fecdd3">&bull; Bacterial Wilt & Nematodes presence</text>
+                <rect x="158" y="1160" width="244" height="32" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+                <text x="164" y="1173" font-size="8.5" font-weight="800" fill="#6ee7b7">PROPOSED IMPROVEMENT:</text>
+                <text x="164" y="1185" font-size="8" font-weight="700" fill="#a7f3d0">Avail 50% Inputs Early & Strict Soil Test</text>
+            </g>
+            <path d="M 410 1110 L 435 1110" stroke="#38bdf8" stroke-width="3" marker-end="url(#arrow)"/>
+
+            <!-- STEP 14 -->
+            <g class="step-card">
+                <rect x="440" y="990" width="260" height="240" rx="8" fill="#1c2541" stroke="#f59e0b" stroke-width="2.5"/>
+                <rect x="440" y="990" width="260" height="30" rx="6" fill="#78350f"/>
+                <text x="450" y="1010" font-size="10.5" font-weight="800" fill="#fbbf24">14.0 1st Hilling / Weeding</text>
+                <rect x="650" y="995" width="42" height="20" rx="4" fill="#f59e0b"/>
+                <text x="671" y="1009" font-size="9" font-weight="800" fill="#451a03" text-anchor="middle">BVA</text>
+                <text x="450" y="1038" font-size="9" font-weight="700" fill="#94a3b8">Owner: <tspan fill="#f8fafc">Outgrower & OAF Agronomist</tspan></text>
+                <text x="450" y="1053" font-size="9" font-weight="700" fill="#38bdf8">Lead Time: <tspan fill="#cbd5e1">5-8 hrs / Ha (40 casuals)</tspan></text>
+                <text x="450" y="1072" font-size="8.5" fill="#cbd5e1">Tools: Hand hoe, Notebook, AppSheet.</text>
+                <text x="450" y="1085" font-size="8.5" fill="#cbd5e1">Desc: Remove weeds & mound soil around crops.</text>
+                <rect x="448" y="1095" width="244" height="60" rx="4" fill="#450a0a" stroke="#ef4444" stroke-width="1"/>
+                <text x="454" y="1109" font-size="8.5" font-weight="800" fill="#fca5a5">CHALLENGES & RISKS:</text>
+                <text x="454" y="1122" font-size="8" fill="#fecdd3">&bull; Casual labor availability delays</text>
+                <rect x="448" y="1160" width="244" height="32" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+                <text x="454" y="1173" font-size="8.5" font-weight="800" fill="#6ee7b7">PROPOSED IMPROVEMENT:</text>
+                <text x="454" y="1185" font-size="8" font-weight="700" fill="#a7f3d0">Labor Scheduling & Early Weeding Standard</text>
+            </g>
+            <path d="M 700 1110 L 725 1110" stroke="#38bdf8" stroke-width="3" marker-end="url(#arrow)"/>
+
+            <!-- STEP 15 -->
+            <g class="step-card">
+                <rect x="730" y="990" width="260" height="240" rx="8" fill="#1c2541" stroke="#f59e0b" stroke-width="2.5"/>
+                <rect x="730" y="990" width="260" height="30" rx="6" fill="#78350f"/>
+                <text x="740" y="1010" font-size="10.5" font-weight="800" fill="#fbbf24">15.0 Fertilizer Topdressing</text>
+                <rect x="940" y="995" width="42" height="20" rx="4" fill="#f59e0b"/>
+                <text x="961" y="1009" font-size="9" font-weight="800" fill="#451a03" text-anchor="middle">BVA</text>
+                <text x="740" y="1038" font-size="9" font-weight="700" fill="#94a3b8">Owner: <tspan fill="#f8fafc">Outgrower & OAF Agronomist</tspan></text>
+                <text x="740" y="1053" font-size="9" font-weight="700" fill="#38bdf8">Lead Time: <tspan fill="#cbd5e1">5-8 hrs / Ha (5 casuals)</tspan></text>
+                <text x="740" y="1072" font-size="8.5" fill="#cbd5e1">Tools: Sacs, Small buckets, AppSheet.</text>
+                <text x="740" y="1085" font-size="8.5" fill="#cbd5e1">Desc: Apply inorganic fertilizer in the field.</text>
+                <rect x="738" y="1095" width="244" height="60" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+                <text x="744" y="1109" font-size="8.5" font-weight="800" fill="#6ee7b7">CHALLENGES:</text>
+                <text x="744" y="1122" font-size="8" fill="#a7f3d0">&bull; Inorganic fertilizer application</text>
+                <rect x="738" y="1160" width="244" height="32" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+                <text x="744" y="1173" font-size="8.5" font-weight="800" fill="#6ee7b7">PROPOSED IMPROVEMENT:</text>
+                <text x="744" y="1185" font-size="8" font-weight="700" fill="#a7f3d0">Targeted Inorganic Topdressing Dosing Guide</text>
+            </g>
+            <path d="M 990 1110 L 1015 1110" stroke="#38bdf8" stroke-width="3" marker-end="url(#arrow)"/>
+
+            <!-- STEP 16 -->
+            <g class="step-card">
+                <rect x="1020" y="990" width="260" height="240" rx="8" fill="#1c2541" stroke="#f59e0b" stroke-width="2.5"/>
+                <rect x="1020" y="990" width="260" height="30" rx="6" fill="#78350f"/>
+                <text x="1030" y="1010" font-size="10.5" font-weight="800" fill="#fbbf24">16.0 Second Hilling</text>
+                <rect x="1230" y="995" width="42" height="20" rx="4" fill="#f59e0b"/>
+                <text x="1251" y="1009" font-size="9" font-weight="800" fill="#451a03" text-anchor="middle">BVA</text>
+                <text x="1030" y="1038" font-size="9" font-weight="700" fill="#94a3b8">Owner: <tspan fill="#f8fafc">Outgrower & OAF Agronomist</tspan></text>
+                <text x="1030" y="1053" font-size="9" font-weight="700" fill="#38bdf8">Lead Time: <tspan fill="#cbd5e1">5-8 hrs / Ha (50 casuals)</tspan></text>
+                <text x="1030" y="1072" font-size="8.5" fill="#cbd5e1">Tools: Hand hoe, Notebook, AppSheet.</text>
+                <text x="1030" y="1085" font-size="8.5" fill="#cbd5e1">Desc: Cover topdressed fert & mound soil.</text>
+                <rect x="1028" y="1095" width="244" height="60" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+                <text x="1034" y="1109" font-size="8.5" font-weight="800" fill="#6ee7b7">CHALLENGES:</text>
+                <text x="1034" y="1122" font-size="8" fill="#a7f3d0">&bull; Secondary mounding routine</text>
+                <rect x="1028" y="1160" width="244" height="32" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+                <text x="1034" y="1173" font-size="8.5" font-weight="800" fill="#6ee7b7">PROPOSED IMPROVEMENT:</text>
+                <text x="1034" y="1185" font-size="8" font-weight="700" fill="#a7f3d0">Soil Mounding & Coverage Quality Check</text>
+            </g>
+
+            <path d="M 1150 1230 L 1150 1280 L 150 1280 L 150 1305" stroke="#38bdf8" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+
+            <!-- ROW 5: STEPS 17 - 20 -->
+            <!-- STEP 17 -->
+            <g class="step-card">
+                <rect x="150" y="1310" width="260" height="240" rx="8" fill="#1c2541" stroke="#f59e0b" stroke-width="2.5"/>
+                <rect x="150" y="1310" width="260" height="30" rx="6" fill="#78350f"/>
+                <text x="160" y="1330" font-size="10.5" font-weight="800" fill="#fbbf24">17.0 Negative Selection</text>
+                <rect x="360" y="1315" width="42" height="20" rx="4" fill="#f59e0b"/>
+                <text x="381" y="1329" font-size="9" font-weight="800" fill="#451a03" text-anchor="middle">BVA</text>
+                <text x="160" y="1358" font-size="9" font-weight="700" fill="#94a3b8">Owner: <tspan fill="#f8fafc">Outgrower & OAF Agronomist</tspan></text>
+                <text x="160" y="1373" font-size="9" font-weight="700" fill="#38bdf8">Lead Time: <tspan fill="#cbd5e1">5-8 hrs / Ha (12 casuals) | Weekly</tspan></text>
+                <text x="160" y="1392" font-size="8.5" fill="#cbd5e1">Tools: Sacs, Notebook, AppSheet.</text>
+                <text x="160" y="1405" font-size="8.5" fill="#cbd5e1">Desc: Rogue diseased plants & offtypes in field.</text>
+                <rect x="158" y="1415" width="244" height="60" rx="4" fill="#450a0a" stroke="#ef4444" stroke-width="1"/>
+                <text x="164" y="1429" font-size="8.5" font-weight="800" fill="#fca5a5">CHALLENGES & RISKS:</text>
+                <text x="164" y="1442" font-size="8" fill="#fecdd3">&bull; OG unwilling to rogue assuming yield loss</text>
+                <rect x="158" y="1480" width="244" height="32" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+                <text x="164" y="1493" font-size="8.5" font-weight="800" fill="#6ee7b7">PROPOSED IMPROVEMENT:</text>
+                <text x="164" y="1505" font-size="8" font-weight="700" fill="#a7f3d0">Keep Training OG on Impact of Rogueing</text>
+            </g>
+            <path d="M 410 1430 L 435 1430" stroke="#38bdf8" stroke-width="3" marker-end="url(#arrow)"/>
+
+            <!-- STEP 18 -->
+            <g class="step-card">
+                <rect x="440" y="1310" width="260" height="240" rx="8" fill="#1c2541" stroke="#f59e0b" stroke-width="2.5"/>
+                <rect x="440" y="1310" width="260" height="30" rx="6" fill="#78350f"/>
+                <text x="450" y="1330" font-size="10.5" font-weight="800" fill="#fbbf24">18.0 Spot Weeding</text>
+                <rect x="650" y="1315" width="42" height="20" rx="4" fill="#f59e0b"/>
+                <text x="671" y="1329" font-size="9" font-weight="800" fill="#451a03" text-anchor="middle">BVA</text>
+                <text x="450" y="1358" font-size="9" font-weight="700" fill="#94a3b8">Owner: <tspan fill="#f8fafc">Outgrower & OAF Agronomist</tspan></text>
+                <text x="450" y="1373" font-size="9" font-weight="700" fill="#38bdf8">Lead Time: <tspan fill="#cbd5e1">5-8 hrs / Ha (8 casuals) | 2x/season</tspan></text>
+                <text x="450" y="1392" font-size="8.5" fill="#cbd5e1">Tools: Hand hoe, Notebook & pen.</text>
+                <text x="450" y="1405" font-size="8.5" fill="#cbd5e1">Desc: Remove overgrown weeds superior to crop.</text>
+                <rect x="448" y="1415" width="244" height="60" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+                <text x="454" y="1429" font-size="8.5" font-weight="800" fill="#6ee7b7">CHALLENGES:</text>
+                <text x="454" y="1442" font-size="8" fill="#a7f3d0">&bull; Targeted weed removal</text>
+                <rect x="448" y="1480" width="244" height="32" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+                <text x="454" y="1493" font-size="8.5" font-weight="800" fill="#6ee7b7">PROPOSED IMPROVEMENT:</text>
+                <text x="454" y="1505" font-size="8" font-weight="700" fill="#a7f3d0">Targeted Weeding Maintenance SOP</text>
+            </g>
+            <path d="M 700 1430 L 725 1430" stroke="#38bdf8" stroke-width="3" marker-end="url(#arrow)"/>
+
+            <!-- STEP 19 -->
+            <g class="step-card">
+                <rect x="730" y="1310" width="260" height="240" rx="8" fill="#1c2541" stroke="#f59e0b" stroke-width="2.5"/>
+                <rect x="730" y="1310" width="260" height="30" rx="6" fill="#78350f"/>
+                <text x="740" y="1330" font-size="10.5" font-weight="800" fill="#fbbf24">19.0 Field Alleys Cleaning</text>
+                <rect x="940" y="1315" width="42" height="20" rx="4" fill="#f59e0b"/>
+                <text x="961" y="1329" font-size="9" font-weight="800" fill="#451a03" text-anchor="middle">BVA</text>
+                <text x="740" y="1358" font-size="9" font-weight="700" fill="#94a3b8">Owner: <tspan fill="#f8fafc">Outgrower & OAF Agronomist</tspan></text>
+                <text x="740" y="1373" font-size="9" font-weight="700" fill="#38bdf8">Lead Time: <tspan fill="#cbd5e1">5-8 hrs / Ha (5 casuals) | 3x/season</tspan></text>
+                <text x="740" y="1392" font-size="8.5" fill="#cbd5e1">Tools: Hand hoes, Machetes.</text>
+                <text x="740" y="1405" font-size="8.5" fill="#cbd5e1">Desc: Clean alleys connecting field and borders.</text>
+                <rect x="738" y="1415" width="244" height="60" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+                <text x="744" y="1429" font-size="8.5" font-weight="800" fill="#6ee7b7">CHALLENGES:</text>
+                <text x="744" y="1442" font-size="8" fill="#a7f3d0">&bull; Pathway sanitation routine</text>
+                <rect x="738" y="1480" width="244" height="32" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+                <text x="744" y="1493" font-size="8.5" font-weight="800" fill="#6ee7b7">PROPOSED IMPROVEMENT:</text>
+                <text x="744" y="1505" font-size="8" font-weight="700" fill="#a7f3d0">Field Border & Alley Sanitation Check</text>
+            </g>
+            <path d="M 990 1430 L 1015 1430" stroke="#38bdf8" stroke-width="3" marker-end="url(#arrow)"/>
+
+            <!-- STEP 20 -->
+            <g class="step-card">
+                <rect x="1020" y="1310" width="260" height="240" rx="8" fill="#1c2541" stroke="#f59e0b" stroke-width="2.5"/>
+                <rect x="1020" y="1310" width="260" height="30" rx="6" fill="#78350f"/>
+                <text x="1030" y="1330" font-size="10.5" font-weight="800" fill="#fbbf24">20.0 Tuber Scouting</text>
+                <rect x="1230" y="1315" width="42" height="20" rx="4" fill="#f59e0b"/>
+                <text x="1251" y="1329" font-size="9" font-weight="800" fill="#451a03" text-anchor="middle">BVA</text>
+                <text x="1030" y="1358" font-size="9" font-weight="700" fill="#94a3b8">Owner: <tspan fill="#f8fafc">Outgrower & OAF Agronomist</tspan></text>
+                <text x="1030" y="1373" font-size="9" font-weight="700" fill="#38bdf8">Lead Time: <tspan fill="#cbd5e1">2 hrs / Ha (5 casuals)</tspan></text>
+                <text x="1030" y="1392" font-size="8.5" fill="#cbd5e1">Tools: Sacs, Bucket, Notebook & pen.</text>
+                <text x="1030" y="1405" font-size="8.5" fill="#cbd5e1">Desc: Uproot sample plants to check tuber maturity.</text>
+                <rect x="1028" y="1415" width="244" height="60" rx="4" fill="#450a0a" stroke="#ef4444" stroke-width="1"/>
+                <text x="1034" y="1429" font-size="8.5" font-weight="800" fill="#fca5a5">CHALLENGES & RISKS:</text>
+                <text x="1034" y="1442" font-size="8" fill="#fecdd3">&bull; Formal data recording not yet in place</text>
+                <rect x="1028" y="1480" width="244" height="32" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+                <text x="1034" y="1493" font-size="8.5" font-weight="800" fill="#6ee7b7">PROPOSED IMPROVEMENT:</text>
+                <text x="1034" y="1505" font-size="8" font-weight="700" fill="#a7f3d0">AppSheet Digital Tuber Logging SOP</text>
+            </g>
+
+            <path d="M 1150 1550 L 1150 1600 L 150 1600 L 150 1625" stroke="#38bdf8" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+
+            <!-- ROW 6: STEP 21 & END -->
+            <!-- STEP 21 -->
+            <g class="step-card">
+                <rect x="150" y="1630" width="260" height="110" rx="8" fill="#1c2541" stroke="#22c55e" stroke-width="2.5"/>
+                <rect x="150" y="1630" width="260" height="25" rx="6" fill="#14532d"/>
+                <text x="160" y="1647" font-size="10" font-weight="800" fill="#4ade80">21.0 Dehaulming</text>
+                <rect x="360" y="1633" width="42" height="18" rx="4" fill="#22c55e"/>
+                <text x="381" y="1646" font-size="8.5" font-weight="800" fill="#052e16" text-anchor="middle">VA</text>
+                <text x="160" y="1668" font-size="8.5" fill="#cbd5e1">5 hrs / Ha (40 casuals) | Tools: Machete, Sickle</text>
+                <text x="160" y="1680" font-size="8" fill="#fecdd3">Risk: Large haulm disposal volume & sanitation risks</text>
+                <rect x="158" y="1692" width="244" height="38" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+                <text x="164" y="1705" font-size="8" font-weight="800" fill="#6ee7b7">PROPOSED IMPROVEMENT:</text>
+                <text x="164" y="1717" font-size="7.5" font-weight="700" fill="#a7f3d0">Haulm Disposal & Field Sanitation Protocol</text>
+            </g>
+
+            <!-- END EVENT -->
+            <path d="M 410 1685 L 450 1685" stroke="#38bdf8" stroke-width="3" marker-end="url(#arrow)"/>
+            <circle cx="475" cy="1685" r="18" fill="#ef4444" stroke="#b91c1c" stroke-width="3"/>
+            <text x="475" y="1689" font-size="9" font-weight="800" fill="#ffffff" text-anchor="middle">END</text>
+
+        </svg>
+
+        <div class="legend">
+            <div class="legend-item">
+                <span class="legend-badge badge-va">VA</span>
+                <span><strong>Value-Added:</strong> Direct physical seed transformation (Seed Planting & Dehaulming canopy termination).</span>
+            </div>
+            <div class="legend-item">
+                <span class="legend-badge badge-bva">BVA</span>
+                <span><strong>Business Value-Added:</strong> Essential field preparation, soil nutrition, irrigation, crop care routines, and rogueing.</span>
+            </div>
+            <div class="legend-item">
+                <span class="legend-badge badge-nva">NVA</span>
+                <span><strong>Process Waste:</strong> Delays caused by casual labor shortages, missed irrigation schedules, input supply gaps, and outgrower rogueing reluctance.</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
